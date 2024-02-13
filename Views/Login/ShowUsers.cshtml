@@ -1,0 +1,45 @@
+﻿@model IEnumerable<User>
+@{
+    ViewData["Title"] = "ShowUsers";
+}
+
+<h1>Users</h1>
+
+<table class="table table-bordered table-striped" style="width:100%">
+    <thead>
+        <tr>
+            <th>
+                Username
+            </th>
+            <th>
+                First Name
+            </th>
+            <th>
+                Last Name
+            </th>
+            <th>
+                Email
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var obj in Model)
+        {
+            <tr>
+                <td width="25%">
+                    @obj.Username
+                </td>
+                <td width="25%">
+                    @obj.FirstName
+                </td>
+                <td width="25%">
+                    @obj.LastName
+                </td>
+                <td width="25%">
+                    @obj.Email
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
