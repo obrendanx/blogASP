@@ -1,0 +1,36 @@
+﻿@model BlogPost
+
+<form method="post">
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+            <h2 class="text-primary">Register</h2>
+            <hr />
+        </div>
+        <div class="mb-3">
+            <label asp-for="Subject">Subject</label>
+            <input asp-for="Subject" class="form-control"/>
+            <span asp-validation-for="Subject" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Description">Add a message</label>
+            <textarea asp-for="Description" class="form-control" ></textarea>
+            <span asp-validation-for="Description" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="PostedBy">Posted By</label>
+            <input asp-for="PostedBy" class="form-control" />
+            <span asp-validation-for="PostedBy" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="ForumPage">Posted By</label>
+            <select asp-for="ForumPage" class="form-control">
+                <option value="default">Default</option>
+                <option value="gaming">Gaming</option>
+                <option value="movies">Movies</option>
+            </select>
+            <span asp-validation-for="ForumPage" class="text-danger"></span>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width:150px">Post</button>
+        <a asp-controller="Blog" asp-action="ShowPosts"  class="btn btn-secondary" style="width:150px">View Posts</a>
+    </div>
+</form>

@@ -1,0 +1,36 @@
+﻿.blog_wrapper{
+    height:100%;
+    width:80%;
+    margin-left:10%;
+    padding:10px;
+}
+
+.blog_posts:nth-child(odd) {
+    background: #202C39;
+    color:#F29559;
+}
+
+.blog_posts {
+    padding: 15px;
+    box-shadow: 0 10px 6px -6px #777;
+    background:#283845;
+    margin-bottom:10px;
+}
+
+.blog_header{
+    color:#fff;
+}
+
+.blog_posted {
+    color:#F29559;
+    font-size: 0.6em;
+}
+
+.add_post_btn {
+    color:#fff;
+    background:#283845;
+}
+
+.blog_desc{
+    color:#fff;
+}

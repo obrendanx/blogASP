@@ -1,0 +1,42 @@
+﻿@model IEnumerable<BlogPost>
+@{
+    ViewData["Title"] = "ShowPosts";
+}
+
+<div class="container d-flex justify-content-between">
+    <h1 style="font-size: 1.3em">Recent Posts</h1>
+    <a asp-controller="Blog" asp-action="CreatePost" class="btn add_post_btn">Add a Post</a>
+</div>
+
+<div class="blog_fourms_pages d-flex" style="width:80%; margin-left: 10%;">
+    <a asp-controller="Blog" asp-action="GamingPosts" class="btn add_post_btn m-1">Gaming</a>
+    <a asp-controller="Blog" asp-action="ShowMovies" class="btn add_post_btn m-1">Movies</a>
+</div>
+
+
+<div class="container">
+    <form asp-controller="Blog" asp-action="ShowPosts" method="get" class="form-inline mb-3 d-flex flex-row-reverse mt-3" style="gap:5px; width:80%; margin-left:10%;">
+        <div class="form-group">
+            <select name="filter" class="form-control">
+                <option value="all">All</option>
+                <option value="last24hours">Last 24 Hours</option>
+                <option value="last7days">Last 7 Days</option>
+                <!-- Add more options as needed -->
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Apply Filter</button>
+    </form>
+</div>
+
+
+<div class="blog_wrapper">
+    @foreach (var obj in Model)
+    {
+        <div class="blog_posts">
+            <h2 class="blog_header">@obj.Subject</h2>
+            <p class="blog_desc">@obj.Description</p>
+            <h5 class="blog_posted">posted by: @obj.PostedBy</h5>
+        </div>
+    }
+</div>
+
