@@ -2,6 +2,7 @@
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
 using System.Data;
 using TestProject.Data;
 using TestProject.Models;
@@ -98,6 +99,8 @@ namespace TestProject.Controllers
         {
             if(ModelState.IsValid)
             {
+                string forumPageValue = obj.ForumPage;
+
                 _db.BlogPost.Add(obj);
                 _db.SaveChanges();
                 return RedirectToAction("ShowPosts");
